@@ -1,14 +1,21 @@
 @charset "utf-8";
 
-/* ------------------------------------------------------------------------------------------------------------------Right here the font families were created, the fonts were connected by using the url of every document with the needed  */
+/* ------------------------------------------------------------------------------------------------------------------Here using the @font-face, more fonts were added to the document for the web-browser to read. The font family is the over all names, the url was used to locate the different files that make up the font.  */
 @font-face {
-    font-family: "champagne", "Grunge", "Dobkin";
-    src:
-        url('cac_champagne.woff') format('.woff'),
-        url('cac_champagne.ttf') format('truetype'),
-        url('1942.woff') format('.woff'),
-        url('1942.ttf') format('truetype'),
-        url('DobkinPlain.woff') format('.woff'),
+    font-family: champagne;
+    src: url('cac_champagne.woff') format('woff'),
+        url('cac_champagne.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Grunge;
+    src: url('1942.woff') format('woff'),
+        url('1942.tff') format('truetype');
+}
+
+@font-face {
+    font-family: Dobkin;
+    src: url('DobkinPlain.woff') format('woff'),
         url('DobkinPlain.ttf') format('truetype');
 }
 
@@ -24,6 +31,7 @@
    Filename: ph_styles.css
 
 */
+/*---------------------------------------------------------------------------------------------------------------- Here in the structural styles, the big selectors were created. Html was given a backround color that the entire document would have. The body was given specifications, backround color(hsl) and the font family that would only affect it. The header was also given backround color (black). */
 /* Structural Styles */
 html {
     background-color: hsl(91, 8%, 56%);
@@ -38,6 +46,7 @@ header {
     background-color: black;
 }
 
+/* ------------------------------------------------------------------------------------------------------------------Here all the paragraphs were given specific margin sives and padding sizes(top-5px,right-bottom-left-25px). The paragraphs in the bosy were given a new font size of 1.1 em units, the text was then set to be aligned in the center. The address was also given its own specifications which encluded giving it a normal font style, changing the font size to 0.9 em units, aligning the text to the center, andadding space of 10px above and below the text. */
 p {
     margin: 0px;
     padding: 5px 25px 25px 25px;
@@ -45,17 +54,18 @@ p {
 
 body>p {
     font-size: 1.1em;
-    text-align: middle;
+    text-align: center;
 }
 
 address {
     font-style: normal;
     font-size: 0.9em;
-    text-align: middle;
+    text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
+/* ------------------------------------------------------------------------------------------------------------------Here there were given specifications to the look of the links when rendered by the browser, all links were given the same font-family aswell as padding (10px of space added to the above and beloe the text.). The Links themselves were given the color white without decorations(removing the underline). Different colors were added to both the text and backround when one hovers over the link (hsla-grey,backround-black)  */
 /* Navigation Styles */
 nav a {
     font-family: 'Trebuchet MS', Helvetica, sans-serif;
@@ -63,5 +73,59 @@ nav a {
     padding-bottom: 10px;
 }
 
+nav>ul>li a:link,
+nav>ul>li a:visited {
+    color: white;
+    text-decoration: none;
+    background-color: hsla(0, 0%, 42%, 0.4);
+}
+
+nav>ul>li a:hover,
+nav>ul>li a:active {
+    color: hsla(0, 0%, 100%, 0.7);
+    background-color: hsla(0, 0%, 42%, 0.7)
+}
+
 /* Section Styles */
+section.playbill h1 {
+    font-size: 3em;
+    font-weight: normal;
+    margin: 0px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+}
+
+section#play1 {
+    background-color: hsl(240, 100%, 88%);
+}
+
+section#play1 h1 {
+    font-family: Champagne, cursive;
+}
+
+section#play2 {
+    background-color: hsl(25, 88%, 73%);
+}
+
+section#play2 h1 {
+    font-family: Grunge, ‘Times New Roman’, Times, serif;
+}
+
+section#play3 {
+    background-color: hsl(0, 100%, 75%);
+}
+
+section#play3 h1 {
+    font-family: impact, Charcoal, sans-serif;
+}
+
+section#play4 {
+    background-color: hsl(296, 86%, 86%);
+}
+
+section#play4 h1 {
+    font-family: Dobkin, cursive
+}
+
 /* Description List Styles */
